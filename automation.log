@@ -1,0 +1,78 @@
+2025-08-02 16:53:22,769 INFO:Starting step: step1 - fill_field:login.username
+2025-08-02 16:53:22,769 INFO:Filling field login.username with value: tg1817184773
+2025-08-02 16:53:22,808 INFO:Starting step: step2 - fill_field:login.password
+2025-08-02 16:53:22,808 INFO:Filling field login.password with value: lmtvs@123
+2025-08-02 16:53:22,822 INFO:Starting step: step3 - pause:login.pause_captcha
+2025-08-02 16:53:22,822 INFO:Pausing for login.pause_captcha
+2025-08-02 16:53:40,392 INFO:Filling paused value into login.pause_captcha using selector: input[id=""]
+2025-08-02 16:54:10,440 ERROR:Error in step step3 (pause:login.pause_captcha): Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[id=\"\"]")
+Traceback (most recent call last):
+  File "D:\thirdpartyprojects\web_automation_tool\ramakiprojects\automation.py", line 154, in run
+    await self.pause_action(section_key)
+  File "D:\thirdpartyprojects\web_automation_tool\ramakiprojects\automation.py", line 125, in pause_action
+    await self.page.fill(selector, user_value)
+  File "D:\thirdpartyprojects\web_automation_tool\ramakiprojects\venv\Lib\site-packages\playwright\async_api\_generated.py", line 10087, in fill
+    await self._impl_obj.fill(
+    ...<6 lines>...
+    )
+  File "D:\thirdpartyprojects\web_automation_tool\ramakiprojects\venv\Lib\site-packages\playwright\_impl\_page.py", line 895, in fill
+    return await self._main_frame.fill(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\thirdpartyprojects\web_automation_tool\ramakiprojects\venv\Lib\site-packages\playwright\_impl\_frame.py", line 590, in fill
+    await self._fill(**locals_to_params(locals()))
+  File "D:\thirdpartyprojects\web_automation_tool\ramakiprojects\venv\Lib\site-packages\playwright\_impl\_frame.py", line 602, in _fill
+    await self._channel.send("fill", self._timeout, locals_to_params(locals()))
+  File "D:\thirdpartyprojects\web_automation_tool\ramakiprojects\venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "D:\thirdpartyprojects\web_automation_tool\ramakiprojects\venv\Lib\site-packages\playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[id=\"\"]")
+
+2025-08-02 16:54:49,023 INFO:Starting step: step1 - fill_field:login.username
+2025-08-02 16:54:49,024 INFO:Filling field login.username with value: tg1817184773
+2025-08-02 16:54:49,062 INFO:Starting step: step2 - fill_field:login.password
+2025-08-02 16:54:49,062 INFO:Filling field login.password with value: lmtvs@123
+2025-08-02 16:54:49,074 INFO:Starting step: step3 - pause:login.pause_captcha
+2025-08-02 16:54:49,074 INFO:Pausing for login.pause_captcha
+2025-08-02 16:55:30,373 WARNING:User cancelled or left blank the prompt for login.pause_captcha
+2025-08-02 16:55:30,374 INFO:Starting step: step4 - click:login.login_button
+2025-08-02 16:55:30,374 INFO:Clicking element login.login_button
+2025-08-02 16:55:30,506 INFO:Starting step: step5 - click:login.link_nonTransport
+2025-08-02 16:55:30,506 INFO:Clicking element login.link_nonTransport
+2025-08-02 16:56:00,830 ERROR:Error in step step5 (click:login.link_nonTransport): Page.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("a[id=\"ctl00_lbtnNonTransport\"]")
+Traceback (most recent call last):
+  File "D:\thirdpartyprojects\web_automation_tool\ramakiprojects\automation.py", line 151, in run
+    await self.click_action(section_key)
+  File "D:\thirdpartyprojects\web_automation_tool\ramakiprojects\automation.py", line 39, in click_action
+    await self.page.click(selector)
+  File "D:\thirdpartyprojects\web_automation_tool\ramakiprojects\venv\Lib\site-packages\playwright\async_api\_generated.py", line 9878, in click
+    await self._impl_obj.click(
+    ...<11 lines>...
+    )
+  File "D:\thirdpartyprojects\web_automation_tool\ramakiprojects\venv\Lib\site-packages\playwright\_impl\_page.py", line 856, in click
+    return await self._main_frame.click(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\thirdpartyprojects\web_automation_tool\ramakiprojects\venv\Lib\site-packages\playwright\_impl\_frame.py", line 549, in click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+  File "D:\thirdpartyprojects\web_automation_tool\ramakiprojects\venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "D:\thirdpartyprojects\web_automation_tool\ramakiprojects\venv\Lib\site-packages\playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("a[id=\"ctl00_lbtnNonTransport\"]")
+
