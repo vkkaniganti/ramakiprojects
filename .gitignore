@@ -24,6 +24,8 @@ data/
 venv/
 env/
 ENV/
+venv3.12/
+playwright-package/
 
 # IDEs
 .idea/
@@ -38,3 +40,10 @@ ENV/
 # OS specific
 .DS_Store
 Thumbs.db
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

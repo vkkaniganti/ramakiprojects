@@ -5,6 +5,7 @@ from utils.excel_reader import read_csv, read_excel
 from automation import AutomationSteps
 import os
 import sys
+import subprocess
 
 def resource_path(relative_path):
     base_path = getattr(sys, '_MEIPASS', os.path.abspath("."))
@@ -31,6 +32,18 @@ async def run_automation():
             await automator.run()
 
         await browser.close()
+def ensure_playwright_browsers_installed():
+    try:
+        from playwright.sync_api import sync_playwright
+        # Try launching a browser to check if installed
+        with sync_playwright() as p:
+            p.chromium.launch(headless=False).close()
+    except Exception:
+        # If fails, run playwright install
+        subprocess.run([sys.executable, "-m", "playwright", "install", "chromium"], check=True)
+
+       
 
 if __name__ == "__main__":
+    # ensure_playwright_browsers_installed() 
     asyncio.run(run_automation())
