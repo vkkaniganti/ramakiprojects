@@ -5,7 +5,7 @@ a = Analysis(
     ['main.py'],
     pathex=[],
     binaries=[],
-    datas=[('config', 'config'), ('data', 'data')],
+    datas=[('config', 'config'), ('data', 'data'), ('chrome/chrome-win', 'chrome/chrome-win')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
