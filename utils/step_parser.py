@@ -76,6 +76,7 @@ def get_pause_dialog_js(key_name):
         }});
     '''
     return js_code
+
 def parse_section_key(section_key, user_data, locators, value=None):
     """
     Parses a section_key string and returns (section, key_name, selector, value).

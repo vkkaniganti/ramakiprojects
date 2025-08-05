@@ -1,1 +1,1 @@
-# This file marks the utils directory as a Python package.
+# This file marks the ramakiprojects directory as a Python package.
