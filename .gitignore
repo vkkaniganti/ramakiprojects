@@ -26,6 +26,7 @@ env/
 ENV/
 venv3.12/
 playwright-package/
+main.exe
 
 # IDEs
 .idea/
