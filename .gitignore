@@ -27,6 +27,11 @@ ENV/
 venv3.12/
 playwright-package/
 main.exe
+dist/
+automation.log
+tests/
+tests-examples/
+
 
 # IDEs
 .idea/
