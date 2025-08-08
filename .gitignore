@@ -31,7 +31,7 @@ dist/
 automation.log
 tests/
 tests-examples/
-
+chrome/
 
 # IDEs
 .idea/

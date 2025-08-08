@@ -1,3 +1,18 @@
+import logging
+
+async def scroll_and_retry(page, selector, max_attempts=3):
+    """
+    Tries to find and interact with an element. If not found or detached, scrolls down and retries.
+    Returns True if successful, False otherwise.
+    """
+    for attempt in range(max_attempts):
+        try:
+            await page.wait_for_selector(selector, timeout=2000)
+            return True
+        except Exception as e:
+            logging.warning(f"Attempt {attempt+1}: Element not found or detached for selector '{selector}'. Scrolling down and retrying.")
+            await page.evaluate("window.scrollBy(0, 300)")
+    return False
 def get_pause_dialog_js(key_name):
     # Returns the JS code for the browser modal dialog for pause_action
     label_text = f"Please enter the value for {key_name.replace('_', ' ')}:"

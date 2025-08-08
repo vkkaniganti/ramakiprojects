@@ -6,6 +6,7 @@ from automation import AutomationSteps
 import os
 import sys
 from pathlib import Path
+import configparser
 
 def resource_path(relative_path):
     base_path = getattr(sys, '_MEIPASS', os.path.abspath("."))
@@ -15,6 +16,11 @@ EXCEL_PATH = resource_path("data/input_data.xlsx")
 CSV_PATH= resource_path("data/Dummy_Data.csv")
 LOCATORS_CONF = resource_path("config/locators.conf")
 STEPS_CONF = resource_path("config/steps.conf")
+CONFIG_PATH = resource_path("config/app.conf")
+config = configparser.ConfigParser()
+config.read(CONFIG_PATH)
+APP_URL = config.get("app", "url", fallback="https://tgtransport.net/TGCFSTONLINE/Registration/DealerLogin.aspx")
+
 
 async def run_automation():
     # input_rows = read_excel(EXCEL_PATH)
@@ -31,7 +37,7 @@ async def run_automation():
         context = await browser.new_context()
         page = await context.new_page()
 
-        await page.goto("https://tgtransport.net/TGCFSTONLINE/Registration/DealerLogin.aspx")
+        await page.goto(APP_URL)
 
         for user_data in input_rows:
             automator = AutomationSteps(page, LOCATORS_CONF, STEPS_CONF, user_data)

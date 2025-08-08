@@ -1,0 +1,52 @@
+2025-08-08 20:54:51,985 INFO:Starting step: step1 - fill_field:login.username=tg1817184773
+2025-08-08 20:54:51,985 INFO:Filling field login.username with value: tg1817184773
+2025-08-08 20:54:52,048 INFO:Starting step: step2 - fill_field:login.password=lmtvs@123
+2025-08-08 20:54:52,048 INFO:Filling field login.password with value: lmtvs@123
+2025-08-08 20:54:52,064 INFO:Starting step: step3 - pause:login.pause_captcha
+2025-08-08 20:54:52,064 INFO:Pausing for login.pause_captcha
+2025-08-08 20:55:05,837 INFO:Filling paused value into login.pause_captcha using selector: input[id="ctl00_OnlineContent_txtCaptcha"]
+2025-08-08 20:55:05,846 INFO:Starting step: step4 - click:login.login_button
+2025-08-08 20:55:05,846 INFO:Clicking element login.login_button
+2025-08-08 20:55:05,908 INFO:Starting step: step5 - mouseover:login.link_NewVehicle
+2025-08-08 20:55:05,908 INFO:Mouse over element login.link_NewVehicle
+2025-08-08 20:55:08,651 INFO:Starting step: step6 - click:login.link_nonTransport
+2025-08-08 20:55:08,651 INFO:Clicking element login.link_nonTransport
+2025-08-08 20:55:08,721 INFO:Starting step: step7 - select:vehicle_details.select_registration=Non-Transport
+2025-08-08 20:55:08,721 INFO:Selecting value 'Non-Transport' in dropdown vehicle_details.select_registration using selector: select[id="ctl00_OnlineDealerContent_ddlVehCat"]
+2025-08-08 20:55:09,959 INFO:Starting step: step8 - select:vehicle_details.select_financeID=No
+2025-08-08 20:55:09,959 INFO:Selecting value 'No' in dropdown vehicle_details.select_financeID using selector: select[id="ctl00_OnlineDealerContent_ddlIsvehfin"]
+2025-08-08 20:55:09,978 INFO:Starting step: step9 - select:vehicle_details.select_class=MOTOR CYCLE
+2025-08-08 20:55:09,978 INFO:Selecting value 'MOTOR CYCLE' in dropdown vehicle_details.select_class using selector: select[id="ctl00_OnlineDealerContent_ddlVehClass"]
+2025-08-08 20:55:09,981 INFO:Starting step: step10 - select:vehicle_details.select_makesName=TVS MOTOR COMPANY LTD
+2025-08-08 20:55:09,981 INFO:Selecting value 'TVS MOTOR COMPANY LTD' in dropdown vehicle_details.select_makesName using selector: select[id="ctl00_OnlineDealerContent_ddlMakerName"]
+2025-08-08 20:55:09,999 INFO:Starting step: step11 - select:vehicle_details.select_makerclass=TVS APACHE RTR 160 4V DRUM BSVI
+2025-08-08 20:55:09,999 INFO:Selecting value 'TVS APACHE RTR 160 4V DRUM BSVI' in dropdown vehicle_details.select_makerclass using selector: select[id="ctl00_OnlineDealerContent_ddlMakerClass"]
+2025-08-08 20:55:11,293 INFO:Starting step: step12 - select:vehicle_details.select_ownerShipType=Individual
+2025-08-08 20:55:11,293 INFO:Selecting value 'Individual' in dropdown vehicle_details.select_ownerShipType using selector: select[id="ctl00_OnlineDealerContent_ddlOwnerType"]
+2025-08-08 20:55:11,314 INFO:Starting step: step13 - fill_field:vehicle_details.input_engineNo=1234567890
+2025-08-08 20:55:11,314 INFO:Filling field vehicle_details.input_engineNo with value: 1234567890
+2025-08-08 20:55:11,326 INFO:Starting step: step14 - fill_field:vehicle_details.input_chassisNo=9876543210
+2025-08-08 20:55:11,326 INFO:Filling field vehicle_details.input_chassisNo with value: 9876543210
+2025-08-08 20:55:11,358 INFO:Starting step: step15 - fill_field:vehicle_details.input_color=Red
+2025-08-08 20:55:11,359 INFO:Filling field vehicle_details.input_color with value: Red
+2025-08-08 20:55:11,376 INFO:Starting step: step16 - fill_field:vehicle_details.input_invoiceNo=INV123456
+2025-08-08 20:55:11,377 INFO:Filling field vehicle_details.input_invoiceNo with value: INV123456
+2025-08-08 20:55:11,394 INFO:Starting step: step17 - fill_field:vehicle_details.input_costPrice=500000
+2025-08-08 20:55:11,394 INFO:Filling field vehicle_details.input_costPrice with value: 500000
+2025-08-08 20:55:11,410 INFO:Starting step: step18 - fill_field:vehicle_details.input_costPriceConfirm=500000
+2025-08-08 20:55:11,410 INFO:Filling field vehicle_details.input_costPriceConfirm with value: 500000
+2025-08-08 20:55:11,433 INFO:Starting step: step19 - fill_field:vehicle_details.input_invoice_date=24
+2025-08-08 20:55:11,433 INFO:Filling field vehicle_details.input_invoice_date with value: 24
+2025-08-08 20:55:11,460 INFO:Starting step: step20 - fill_field:vehicle_details.input_invoice_month=08
+2025-08-08 20:55:11,460 INFO:Filling field vehicle_details.input_invoice_month with value: 08
+2025-08-08 20:55:11,476 INFO:Starting step: step21 - fill_field:vehicle_details.input_invoice_year=2023
+2025-08-08 20:55:11,476 INFO:Filling field vehicle_details.input_invoice_year with value: 2023
+2025-08-08 20:55:11,508 INFO:Starting step: step22 - click:application_details.link_app_details
+2025-08-08 20:55:11,508 INFO:Clicking element application_details.link_app_details
+2025-08-08 20:55:11,557 INFO:Starting step: step23 - fill_field:application_details.first_name
+2025-08-08 20:55:11,558 INFO:Filling field application_details.first_name with value: KRISHNA
+2025-08-08 20:55:12,958 INFO:Starting step: step24 - fill_field:application_details.last_name
+2025-08-08 20:55:12,958 INFO:Filling field application_details.last_name with value: KAVALA
+2025-08-08 20:55:12,975 INFO:Starting step: step900 - pause:login.pause_for_otp
+2025-08-08 20:55:12,975 INFO:Pausing for login.pause_for_otp
+2025-08-08 20:55:26,256 WARNING:User cancelled or left blank the prompt for login.pause_for_otp

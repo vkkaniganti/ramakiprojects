@@ -31,33 +31,44 @@ class AutomationSteps:
         await self.page.hover(selector)
 
     async def fill_field_action(self, section_key, value=None):
+        from utils.step_parser import scroll_and_retry
         section, key_name, selector, value = parse_section_key(section_key, self.user_data, self.locators, value)
         logging.info(f"Filling field {section}.{key_name} with value: {value}")
-        await self.page.fill(selector, value)
+        found = await scroll_and_retry(self.page, selector)
+        if found:
+            await self.page.fill(selector, value)
+        else:
+            logging.error(f"Could not find element for {section}.{key_name} after scrolling.")
 
     async def click_action(self, section_key):
+        from utils.step_parser import scroll_and_retry
         section, key_name, selector, _ = parse_section_key(section_key, self.user_data, self.locators)
         logging.info(f"Clicking element {section}.{key_name}")
-        await self.page.click(selector)
+        found = await scroll_and_retry(self.page, selector)
+        if found:
+            await self.page.click(selector)
+        else:
+            logging.error(f"Could not find element for {section}.{key_name} after scrolling.")
 
     async def pause_action(self, section_key):
+        from utils.step_parser import scroll_and_retry, get_pause_dialog_js
         section, key_name, selector, _ = parse_section_key(section_key, self.user_data, self.locators)
         logging.info(f"Pausing for {section}.{key_name}")
         # Use Python input for OTP or navigation-prone steps
-        if any(x in key_name.lower() for x in ["otp", "password", "pin", "code"]):
-            user_value = input(f"Please enter the value for {key_name.replace('_', ' ')} (as seen in the browser): ")
-        else:
-            from utils.step_parser import get_pause_dialog_js
-            js_code = get_pause_dialog_js(key_name)
-            user_value = await self.page.evaluate(js_code)
+        # if any(x in key_name.lower() for x in ["otp", "password", "pin", "code"]):
+        #     user_value = input(f"Please enter the value for {key_name.replace('_', ' ')} (as seen in the browser): ")
+        # else:
+        js_code = get_pause_dialog_js(key_name)
+        user_value = await self.page.evaluate(js_code)
         if not user_value:
             logging.warning(f"User cancelled or left blank the prompt for {section}.{key_name}")
             return
-        if selector:
+        found = await scroll_and_retry(self.page, selector)
+        if found:
             logging.info(f"Filling paused value into {section}.{key_name} using selector: {selector}")
             await self.page.fill(selector, user_value)
         else:
-            logging.warning(f"No locator found for pause: {section}.{key_name}")
+            logging.warning(f"No locator found for pause: {section}.{key_name} after scrolling.")
 
     async def select_action(self, section_key, value=None):
         section, key_name, selector, value = parse_section_key(section_key, self.user_data, self.locators, value)
